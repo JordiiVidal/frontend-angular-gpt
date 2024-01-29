@@ -2,12 +2,10 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-    selector: 'app-audio-to-text',
-    standalone: true,
-    imports: [
-        CommonModule,
-    ],
-    templateUrl: './audioToText.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'app-audio-to-text',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './audioToText.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AudioToTextComponent { }
+export default class AudioToTextComponent {}
