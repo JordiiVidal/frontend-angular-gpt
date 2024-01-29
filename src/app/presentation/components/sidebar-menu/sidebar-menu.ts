@@ -1,10 +1,10 @@
 import { SidebarMenuItem } from '../sidebar-menu-item/sidebar-menu-item';
-import { routes } from '../../../app.routes';
+import { SidebarMenuRoutes } from './sidebar-menu-routes';
 
 export class SidebarMenu {
   private _items: SidebarMenuItem[];
 
-  constructor(routes: SidebarMenuRoute[]) {
+  constructor(routes: SidebarMenuRoutes) {
     this._items = this.itemsFromRoutes(routes);
   }
 
@@ -12,14 +12,9 @@ export class SidebarMenu {
     return this._items;
   }
 
-  private itemsFromRoutes(routes: SidebarMenuRoute[]): SidebarMenuItem[] {
+  private itemsFromRoutes(routes: SidebarMenuRoutes): SidebarMenuItem[] {
     return routes
       .filter((r) => r.data)
       .map(({ path, data }) => new SidebarMenuItem(path!, data));
   }
-}
-
-export interface SidebarMenuRoute {
-  path: string;
-  data: any;
 }
