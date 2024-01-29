@@ -11,11 +11,16 @@ export class SidebarMenu {
   static createFromRoutes(routes: Routes): SidebarMenu {
     return routes
       .filter((r) => r.data)
-      .reduce((itemList, { path, data }) => {
+      .reduce((state, { path, data }) => {
         const { icon, title, description } = data!;
-        const item = new SidebarMenuItem(path!, icon, title, description);
-        itemList.items.push(item);
-        return itemList;
+        const item = {
+          path,
+          icon,
+          title,
+          description,
+        } as SidebarMenuItem;
+        state.items.push(item);
+        return state;
       }, new SidebarMenu());
   }
 }
