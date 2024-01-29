@@ -1,26 +1,25 @@
-import { Routes } from '@angular/router';
 import { SidebarMenuItem } from '../sidebar-menu-item/sidebar-menu-item';
+import { routes } from '../../../app.routes';
 
 export class SidebarMenu {
-  items: SidebarMenuItem[];
+  private _items: SidebarMenuItem[];
 
-  constructor() {
-    this.items = [];
+  constructor(routes: SidebarMenuRoute[]) {
+    this._items = this.itemsFromRoutes(routes);
   }
 
-  static createFromRoutes(routes: Routes): SidebarMenu {
+  get items(): SidebarMenuItem[] {
+    return this._items;
+  }
+
+  private itemsFromRoutes(routes: SidebarMenuRoute[]): SidebarMenuItem[] {
     return routes
       .filter((r) => r.data)
-      .reduce((state, { path, data }) => {
-        const { icon, title, description } = data!;
-        const item = {
-          path,
-          icon,
-          title,
-          description,
-        } as SidebarMenuItem;
-        state.items.push(item);
-        return state;
-      }, new SidebarMenu());
+      .map(({ path, data }) => new SidebarMenuItem(path!, data));
   }
+}
+
+export interface SidebarMenuRoute {
+  path: string;
+  data: any;
 }

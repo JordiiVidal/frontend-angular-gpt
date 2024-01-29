@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { Routes } from '@angular/router';
 import { SidebarMenuItemComponent } from '../sidebar-menu-item/sidebar-menu-item.component';
-import { SidebarMenu } from './sidebar-menu';
+import { SidebarMenu, SidebarMenuRoute } from './sidebar-menu';
 
 @Component({
   selector: 'app-sidebar-menu',
@@ -25,6 +25,6 @@ export class SidebarMenuComponent implements OnInit {
   public sidebarMenuList!: SidebarMenu;
 
   ngOnInit(): void {
-    this.sidebarMenuList = SidebarMenu.createFromRoutes(this.routes);
+    this.sidebarMenuList = new SidebarMenu(this.routes as SidebarMenuRoute[]);
   }
 }
