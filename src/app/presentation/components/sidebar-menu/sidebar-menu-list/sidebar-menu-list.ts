@@ -1,7 +1,7 @@
 import { SidebarMenuItem } from '../sidebar-menu-item/sidebar-menu-item';
-import { SidebarMenuRoutes } from './sidebar-menu-routes';
+import { SidebarMenuRoutes } from '../sidebar-menu-routes';
 
-export class SidebarMenu {
+export class SidebarMenuList {
   private _items: SidebarMenuItem[];
 
   constructor(routes: SidebarMenuRoutes) {

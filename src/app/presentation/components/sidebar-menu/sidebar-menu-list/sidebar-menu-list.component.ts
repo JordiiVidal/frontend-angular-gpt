@@ -7,11 +7,11 @@ import {
 } from '@angular/core';
 import { Routes } from '@angular/router';
 import { SidebarMenuItemComponent } from '../sidebar-menu-item/sidebar-menu-item.component';
-import { SidebarMenu } from './sidebar-menu';
-import { SidebarMenuRoutes } from './sidebar-menu-routes';
+import { SidebarMenuList } from './sidebar-menu-list';
+import { SidebarMenuRoutes } from '../sidebar-menu-routes';
 
 @Component({
-  selector: 'app-sidebar-menu',
+  selector: 'app-sidebar-menu-list',
   standalone: true,
   imports: [CommonModule, SidebarMenuItemComponent],
   template: `
@@ -21,11 +21,13 @@ import { SidebarMenuRoutes } from './sidebar-menu-routes';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SidebarMenuComponent implements OnInit {
+export class SidebarMenuListComponent implements OnInit {
   @Input({ required: true }) routes!: Routes;
-  public sidebarMenuList!: SidebarMenu;
+  public sidebarMenuList!: SidebarMenuList;
 
   ngOnInit(): void {
-    this.sidebarMenuList = new SidebarMenu(this.routes as SidebarMenuRoutes);
+    this.sidebarMenuList = new SidebarMenuList(
+      this.routes as SidebarMenuRoutes
+    );
   }
 }
