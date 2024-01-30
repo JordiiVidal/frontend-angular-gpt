@@ -7,8 +7,10 @@
       "@chatBubbles/*": ["app/presentation/components/chat-bubbles/*"],
       "@sidebarMenu/*": ["app/presentation/components/sidebar-menu/*"],
       "@typingLoader/*": ["app/presentation/components/typing-loader/*"],
+      "@textBoxes/*": ["app/presentation/components/text-boxes/*"],
       "@useCases/*": ["app/core/use-cases/*"],
-      "@interfaces/*": ["app/interfaces/*"]
+      "@interfaces/*": ["app/interfaces/*"],
+      "@pipes/*": ["app/presentation/pipes/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
