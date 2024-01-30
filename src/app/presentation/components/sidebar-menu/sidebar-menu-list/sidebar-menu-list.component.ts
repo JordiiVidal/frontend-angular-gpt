@@ -6,9 +6,9 @@ import {
   OnInit,
 } from '@angular/core';
 import { Routes } from '@angular/router';
-import { SidebarMenuItemComponent } from '../sidebar-menu-item/sidebar-menu-item.component';
-import { SidebarMenuList } from './sidebar-menu-list';
-import { SidebarMenuRoutes } from '../sidebar-menu-routes';
+import { SidebarMenuRoutes } from '@sidebarMenu/interfaces/sidebar-menu-routes';
+import { SidebarMenuList } from '@sidebarMenu/models/sidebar-menu-list';
+import { SidebarMenuItemComponent } from '@sidebarMenu/sidebar-menu-item/sidebar-menu-item.component';
 
 @Component({
   selector: 'app-sidebar-menu-list',

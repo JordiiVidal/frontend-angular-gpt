@@ -1,5 +1,5 @@
-import { SidebarMenuItem } from '../sidebar-menu-item/sidebar-menu-item';
-import { SidebarMenuRoutes } from '../sidebar-menu-routes';
+import { SidebarMenuItem } from '@sidebarMenu/models/sidebar-menu-item';
+import { SidebarMenuRoutes } from '@sidebarMenu/interfaces/sidebar-menu-routes';
 
 export class SidebarMenuList {
   private _items: SidebarMenuItem[];

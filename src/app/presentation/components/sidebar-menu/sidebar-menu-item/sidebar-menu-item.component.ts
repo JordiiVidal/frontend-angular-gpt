@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SidebarMenuItem } from './sidebar-menu-item';
+import { SidebarMenuItem } from '@sidebarMenu/models/sidebar-menu-item';
 
 @Component({
   selector: 'app-sidebar-menu-item',
