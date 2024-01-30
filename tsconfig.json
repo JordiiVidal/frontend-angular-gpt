@@ -5,7 +5,10 @@
     "baseUrl": "./src",
     "paths": {
       "@chatBubbles/*": ["app/presentation/components/chat-bubbles/*"],
-      "@sidebarMenu/*": ["app/presentation/components/sidebar-menu/*"]
+      "@sidebarMenu/*": ["app/presentation/components/sidebar-menu/*"],
+      "@typingLoader/*": ["app/presentation/components/typing-loader/*"],
+      "@useCases/*": ["app/core/use-cases/*"],
+      "@interfaces/*": ["app/interfaces/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
