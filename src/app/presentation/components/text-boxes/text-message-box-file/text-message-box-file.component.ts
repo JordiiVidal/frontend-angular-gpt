@@ -9,7 +9,10 @@ import {
 } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ToggleAttributePipe } from '@pipes/toggle-attribute.pipe';
-
+export interface TextMessageEvent {
+  file: File;
+  prompt?: string | null;
+}
 @Component({
   selector: 'app-text-message-box-file',
   standalone: true,
@@ -18,10 +21,8 @@ import { ToggleAttributePipe } from '@pipes/toggle-attribute.pipe';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TextMessageBoxFileComponent {
-  @Input() placeholder: string = '';
-  @Input() disableCorrections: boolean = true;
-
-  @Output() onMessage: EventEmitter<String> = new EventEmitter();
+  @Input() placeholder: string = 'Message ...';
+  @Output() onMessage: EventEmitter<TextMessageEvent> = new EventEmitter();
 
   public fb = inject(FormBuilder);
   public form = this.fb.group({
@@ -41,7 +42,7 @@ export class TextMessageBoxFileComponent {
 
     const { prompt, file } = this.form.value;
 
-    this.onMessage.emit(prompt ?? '');
+    this.onMessage.emit({ prompt, file: file! });
 
     this.form.reset();
   }
