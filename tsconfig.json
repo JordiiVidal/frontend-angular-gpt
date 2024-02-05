@@ -4,7 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@chatBubbles/*": ["app/presentation/components/chat-bubbles/*"],
+      "@chat/*": ["app/presentation/components/chat/*"],
       "@sidebarMenu/*": ["app/presentation/components/sidebar-menu/*"],
       "@typingLoader/*": ["app/presentation/components/typing-loader/*"],
       "@textBoxes/*": ["app/presentation/components/text-boxes/*"],

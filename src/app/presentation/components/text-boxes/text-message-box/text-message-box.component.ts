@@ -20,7 +20,7 @@ import { ToggleAttributePipe } from '@pipes/toggle-attribute.pipe';
 export class TextMessageBoxComponent {
   @Input() placeholder: string = 'Message ...';
   @Input() disableCorrections: boolean = true;
-  @Output() onMessage: EventEmitter<String> = new EventEmitter();
+  @Output() onMessage: EventEmitter<string> = new EventEmitter();
 
   public fb = inject(FormBuilder);
   public form = this.fb.group({

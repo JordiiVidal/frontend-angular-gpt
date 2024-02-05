@@ -1,0 +1,19 @@
+<div class=" p-3 rounded-lg"
+    [ngClass]="{'col-start-1 col-end-9' : message.isGpt, 'col-start-6 col-end-12' : !message.isGpt}">
+    <div class="flex"
+        [ngClass]="{'flex-row items-start' : message.isGpt, 'flex-row-reverse justify-start' : !message.isGpt}">
+        <div class="flex items-center justify-center h-10 w-10 rounded-full  flex-shrink-0"
+            [ngClass]="{'bg-green-600' : message.isGpt, 'bg-indigo-500' : !message.isGpt}">
+            {{ message.isGpt ? 'G' : 'J'}}
+        </div>
+
+        <div class="relative ml-3 text-sm bg-black bg-opacity-25 pt-3 pb-2 px-4 shadow rounded-xl"
+            [ngClass]="{'ml-3' : message.isGpt, 'mr-3' : !message.isGpt}">
+            @if (message.info) {
+            <app-chat-info [info]="message.info" />
+            } @else {
+            {{ message.text}}
+            }
+        </div>
+    </div>
+</div>
