@@ -9,7 +9,7 @@ import { SidebarMenuItem } from '../models/sidebar-menu-item';
   template: `
     <a
       [routerLink]="item.path"
-      routerLink="bg-gray-800"
+      routerLinkActive="bg-gray-800"
       class="flex justify-center items-center hover:bg-gray-800 rounded-md p-2 transition-colors"
     >
       <i class="{{ item.icon }} text-2xl mr-4 text-indigo-400"></i>
