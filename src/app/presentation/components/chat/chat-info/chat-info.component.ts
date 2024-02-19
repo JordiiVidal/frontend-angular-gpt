@@ -11,9 +11,9 @@ import { Info } from '@interfaces/message.interface';
     <p>{{ info.message }}</p>
     <ul>
       @for (error of info.errors; track $index; let first = $first) {
-      <li>{{ error }}</li>
+        <li>{{ error }}</li>
       } @empty {
-      <li>Empty Errors</li>
+        <li>Empty Errors</li>
       }
     </ul>
   `,

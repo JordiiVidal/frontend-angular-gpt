@@ -16,7 +16,7 @@ import { SidebarMenuRoutes } from '../interfaces/sidebar-menu-routes';
   imports: [CommonModule, SidebarMenuItemComponent],
   template: `
     @for (item of sidebarMenuList.items; track item.path) {
-    <app-sidebar-menu-item [item]="item" />
+      <app-sidebar-menu-item [item]="item" />
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -27,7 +27,7 @@ export class SidebarMenuListComponent implements OnInit {
 
   ngOnInit(): void {
     this.sidebarMenuList = new SidebarMenuList(
-      this.routes as SidebarMenuRoutes
+      this.routes as SidebarMenuRoutes,
     );
   }
 }
