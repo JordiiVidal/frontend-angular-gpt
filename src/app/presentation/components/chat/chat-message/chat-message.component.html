@@ -29,7 +29,9 @@
       @if (message.info) {
         <app-chat-info [info]="message.info" />
       } @else {
-        {{ message.text }}
+        <markdown>
+          {{ message.text }}
+        </markdown>
       }
     </div>
   </div>
