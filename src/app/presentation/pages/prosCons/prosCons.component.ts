@@ -45,7 +45,7 @@ export default class ProsConsComponent {
       },
     ]);
     this.openAiService
-      .checkOrtography(prompt)
+      .prosConsDiscuss(prompt)
       .pipe(
         takeUntil(this.destroy$),
         finalize(() => this.isLoading.set(false)),
@@ -56,8 +56,7 @@ export default class ProsConsComponent {
           ...prev,
           {
             isGpt: true,
-            text: response.message,
-            info: response,
+            text: response.content,
           },
         ]);
       });

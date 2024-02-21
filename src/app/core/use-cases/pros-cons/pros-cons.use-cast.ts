@@ -1,4 +1,4 @@
-import { OrtographyResponse } from '@interfaces/ortography.response';
+import ProsConsResponse from '@interfaces/pros-cons.response';
 import { environment } from 'environments/environment.development';
 
 export const prosConsUseCase = async (prompt: string) => {
@@ -15,18 +15,16 @@ export const prosConsUseCase = async (prompt: string) => {
       throw Error('Connection Error');
     }
 
-    const data = (await resp.json()) as OrtographyResponse;
+    const data = await resp.text();
 
     return {
       ok: true,
-      ...data,
+      content: data,
     };
   } catch (error) {
     return {
       ok: false,
-      userScore: 0,
-      errors: [],
-      message: 'Error',
+      content: '',
     };
   }
 };
